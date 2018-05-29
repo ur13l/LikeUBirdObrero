@@ -1,0 +1,71 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "name": "Manuel Enríquez",
+            "km": "3100",
+            "rating": 9.0,
+            "description": "Más de diez años me respaldan, me gusta realizar todo con extrema higiene y cuidado.",
+            "image": "http://www.zebraservers.net/wp-content/uploads/2018/04/sms-to-users.png",
+            "type": "worker",
+            "latitude": 19.498424,
+            "longitude": -99.235363,
+            "icon": "~/assets/img/user.png",
+            "skills" : []
+        },
+        {
+            "id": "2",
+            "name": "Jorge Torres",
+            "km": "300",
+            "rating": 8.0,
+            "description": "Más de diez años me respaldan, me gusta realizar todo con extrema higiene y cuidado.",
+            "image": "https://fscomps.fotosearch.com/compc/CSP/CSP436/3d-s%C3%BAper-plomero-vuelo-con-caja-de-colecci%C3%B3n-de-ilustraciones__k33707897.jpg",
+            "type": "worker",
+            "latitude": 19.498074,
+            "longitude": -99.236363,
+            "icon": "~/assets/img/user.png",
+            "skills" : []
+        },
+        {
+            "id": "4",
+            "name": "Laura Romero",
+            "km": "233",
+            "rating": 9.0,
+            "description": "Más de diez años me respaldan, me gusta realizar todo con extrema higiene y cuidado.",
+            "image": "https://remarkablemarketingblog.files.wordpress.com/2010/03/girl-on-mobile-phone.png",
+            "type": "shop",
+            "latitude": 19.492074,
+            "longitude": -99.236888,
+            "icon": "~/assets/img/user.png",
+            "skills" : []
+        },
+
+        {
+            "id": "5",
+            "name": "Sergio Buzo",
+            "km": "233",
+            "rating": 9.0,
+            "description": "Más de diez años me respaldan, me gusta realizar todo con extrema higiene y cuidado.",
+            "image": "https://remarkablemarketingblog.files.wordpress.com/2010/03/girl-on-mobile-phone.png",
+            "type": "shop",
+            "latitude": 19.492074,
+            "longitude": -99.229888,
+            "icon": "~/assets/img/user.png",
+            "skills" : []
+        },
+        {
+            "id": "6",
+            "name": "Erika Romero",
+            "km": "233",
+            "rating": 9.0,
+            "description": "Más de diez años me respaldan, me gusta realizar todo con extrema higiene y cuidado.",
+            "image": "https://remarkablemarketingblog.files.wordpress.com/2010/03/girl-on-mobile-phone.png",
+            "type": "shop",
+            "latitude": 19.502074,
+            "longitude": -99.231888,
+            "icon": "~/assets/img/user.png",
+            "skills" : []
+        }
+    ]
+
+}

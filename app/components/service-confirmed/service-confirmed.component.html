@@ -1,0 +1,22 @@
+
+<StackLayout class="background-blue" height="60" orientation="horizontal" padding="5" verticalAlignment="center">
+  <Image height="15" width="20%" src="~/assets/img/close.png" (tap)="back()"></Image>
+  <Image height="30" width="60%" src="~/assets/img/logoicon.png" (tap)="home()"></Image>
+  <Image height="20" width="20%" src="~/assets/img/tick.png" (tap)="confirmOrder()">       </Image>
+</StackLayout>
+<StackLayout class="background-blue" orientation="vertical" horizontalAlignment="center" height="100%">
+  <Image class="img-rounded" src="https://remarkablemarketingblog.files.wordpress.com/2010/03/girl-on-mobile-phone.png" heigth="100" marginTop="20" width="100"></Image>
+  <Label class="white-text" text="Laura Romero" horizontalAlignment="center"></Label>
+  <Label class="white-text" text="250" horizontalAlignment="center"></Label>
+  <Label class="secondary-text medium-text" text="Reparación de baño" horizontalAlignment="center"></Label>
+  <StackLayout height="40%">
+    <GridLayout columns="*" rows="*">
+      <MapView col="0" row="0" [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" mapAnimationsEnabled="true" (mapReady)="onMapReady($event)"></MapView>
+    </GridLayout>
+  </StackLayout>
+  <StackLayout class="button-stack" verticalAlignment="center" margin="10" *ngIf="!service.confirmed">
+    <Label class="white-text" text="Confirmar servicio" horizontalAlignment="center" (tap)="confirmService()"></Label>
+  </StackLayout>
+  <Label class="white-text" margin="10" text="Nota: Recuerda que un gran servicio es una gran calificación. El equipo LikeUBird te desea éxito." horizontalAlignment="center" textWrap="true"></Label>
+  <StackLayout class="background-blue" height="100%"></StackLayout>
+</StackLayout>

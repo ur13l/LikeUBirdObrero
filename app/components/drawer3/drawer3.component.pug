@@ -1,0 +1,34 @@
+RadSideDrawer(tkExampleTitle, tkToggleNavButton, [drawerLocation]="currentLocation")
+    StackLayout.sideStackLayout(tkDrawerContent)
+        StackLayout.sideTitleStackLayout
+            Image.image-margin(src="~/assets/img/logoicon.png", height="60")
+        
+        StackLayout.sideStackLayout
+            StackLayout.sideItem(orientation="horizontal", (tap)="navigate('/home')")
+                Image(height="20", src="~/assets/img/home.png", verticalAlignment="center",)
+                Label.sideLabel(text='Home', verticalAlignment="center",)
+            StackLayout.sideItem(orientation="horizontal")
+                Image(height="20", src="~/assets/img/history.png",(tap)="navigate('/history')", verticalAlignment="center",)
+                Label.sideLabel(text='Historial', verticalAlignment="center",)
+            StackLayout.sideItem(orientation="horizontal")
+                Image(height="20", src="~/assets/img/discount.png", (tap)="navigate('/payments')", verticalAlignment="center",)
+                Label.sideLabel(text='Mis Cobros', verticalAlignment="center",)
+            StackLayout.sideItem(orientation="horizontal",  (tap)="navigate('/help')")
+                Image(height="20", src="~/assets/img/help.png", verticalAlignment="center",)
+                Label.sideLabel(text='Ayuda', verticalAlignment="center",)
+            StackLayout.sideItem(orientation="horizontal",  (tap)="navigate('/settings')")
+                Image(height="20", src="~/assets/img/settings.png", verticalAlignment="center",)
+                Label.sideLabel(text='Configuración', verticalAlignment="center",)
+        Label(text='Cerrar sesión', color='lightgray', padding='15', verticalAlignment="bottom", (tap)='logout()')
+    
+    StackLayout(tkMainContent)
+        StackLayout.menu-nav(zIndex="-200", orientation="vertical", [style.background]="'url(' + image + ')'")
+            StackLayout.black-mask        
+                StackLayout(orientation="horizontal", height="50%")
+                    StackLayout(width="15%")      
+                    Image(height="25" width="70%" src="~/assets/img/logoicon.png")
+                    Image(height="15", width="15%", (tap)="openDrawer()", src="~/assets/img/menu.png")
+                StackLayout(orientation="horizontal", height="50%")
+                    Label.medium-text.white-text(verticalAlignment="center", horizontalAlignment="center", width="100%", style="text-align: center;", [text]="title")
+                
+        page-router-outlet(zIndex="99999")

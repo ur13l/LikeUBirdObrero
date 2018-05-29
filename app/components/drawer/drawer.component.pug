@@ -1,0 +1,31 @@
+RadSideDrawer(tkExampleTitle, tkToggleNavButton, [drawerLocation]="currentLocation")
+    StackLayout.sideStackLayout(tkDrawerContent)
+        StackLayout.sideTitleStackLayout
+            Image.image-margin(src="~/assets/img/logoicon.png", height="60")
+            
+        StackLayout.sideStackLayout
+            StackLayout.sideItem(orientation="horizontal", (tap)="navigate('/home')")
+                Image(height="20", src="~/assets/img/home.png", verticalAlignment="center",)
+                Label.sideLabel(text='Home', verticalAlignment="center",)
+            StackLayout.sideItem(orientation="horizontal",  (tap)="navigate('/history')")
+                Image(height="20", src="~/assets/img/history.png", verticalAlignment="center",)
+                Label.sideLabel(text='Historial', verticalAlignment="center",)
+            StackLayout.sideItem(orientation="horizontal", (tap)="navigate('/payments')")
+                Image(height="20", src="~/assets/img/discount.png", verticalAlignment="center",)
+                Label.sideLabel(text='Mis Cobros', verticalAlignment="center",)
+            StackLayout.sideItem(orientation="horizontal",  (tap)="navigate('/help')")
+                Image(height="20", src="~/assets/img/help.png", verticalAlignment="center",)
+                Label.sideLabel(text='Ayuda', verticalAlignment="center",)
+            StackLayout.sideItem(orientation="horizontal",  (tap)="navigate('/settings')")
+                Image(height="20", src="~/assets/img/settings.png", verticalAlignment="center",)
+                Label.sideLabel(text='Configuración', verticalAlignment="center",)
+            
+        Label(text='Cerrar sesión', color='lightgray', padding='15', verticalAlignment="bottom", (tap)='logout()')
+    
+    StackLayout(tkMainContent)
+        StackLayout.menu-bar(orientation="horizontal")
+            StackLayout(width="20%")
+            Image(height="25" width="60%" src="~/assets/img/logoicon.png")
+            Image(height="15", width="20%", (tap)="openDrawer()", src="~/assets/img/menu.png")
+            
+        page-router-outlet

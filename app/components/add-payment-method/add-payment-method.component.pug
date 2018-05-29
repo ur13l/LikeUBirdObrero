@@ -1,0 +1,55 @@
+StackLayout.background-blue(height="100%")
+    StackLayout(margin="10")
+        Label(text="Tipo y número de tarjeta")
+        TextField.text-edit-blue(
+            [(ngModel)]="paymentMethod.cc_number",
+            #ccNumber="ngModel",
+            required,
+            maxlength=16,
+            minlength=16,
+            keyboardtype="number"
+            )
+        Label.input-error(text="Número incorrecto", *ngIf="submitted && (!ccNumber.valid)")
+        
+    StackLayout(orientation="horizontal", width="100%", margin="10")
+        StackLayout(width="50%", margin="10")
+            Label(text="Fecha que expira")
+            StackLayout(orientation="horizontal")
+                TextField.text-edit-blue(
+                    [(ngModel)]="paymentMethod.month", 
+                    #mm="ngModel",
+                    width="49%", 
+                    hint="MM",
+                    minlength=2,
+                    maxlength=2,
+                    min=1,
+                    max=12,
+                    required,
+                    keyboardtype="number")
+                TextField.text-edit-blue(
+                    [(ngModel)]="paymentMethod.year", 
+                    #yy="ngModel",
+                    width="49%", 
+                    marginLeft="10", 
+                    hint="YY",
+                    minlength=2,
+                    maxlength=2,
+                    required,
+                    keyboardtype="number"
+                    )
+            Label.input-error(text="Fecha inválida", *ngIf="submitted && (mm.errors|| yy.errors)")
+            
+        StackLayout(width="40%", margin="10")
+            Label(text="CVV")
+            TextField.text-edit-blue(
+                [(ngModel)]="paymentMethod.cvv"
+                #cvv="ngModel",
+                required,
+                maxlength="4",
+                minlength="3",
+                keyboardtype="number"
+                )
+            Label.input-error(text="CVV inválido", *ngIf="submitted && (cvv.errors ||cvv.errors)")
+            
+    StackLayout.item-background((tap)="submit() && ccNumber.valid && mm.valid && yy.valid && cvv.valid && addPayment()", orientation="horizontal", width="100%", marginLeft="20", marginRight="20", horizontalAlignment="center", verticalAlignment="center")
+        Label.secondary-text.bold(text="Agregar tarjeta", verticalAlignment="center")

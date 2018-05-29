@@ -1,0 +1,51 @@
+* {
+    color: white;
+}
+
+button {
+    font-size: 15;
+    horizontal-align: center;
+}
+
+.drawerContentText {
+    font-size: 13;
+    padding: 10;
+}
+
+.drawerContentButton {
+    margin: 10;
+    horizontal-align: left;
+}
+
+.sideStackLayout {
+    background: #273649;
+}
+
+.sideTitleStackLayout {
+    height: 140;
+    text-align: center;
+    vertical-align: center;
+}
+
+.sideItem {
+    padding: 15;
+}
+
+.sideLightGrayLabel {
+    background-color: #6E434C;
+}
+
+
+.sideLabel {
+    padding-left: 10;
+}
+
+.center {
+    margin-top: 20;
+    text-align: center;
+    vertical-align: center;
+}
+
+.image-margin {
+    margin-top:25;
+}

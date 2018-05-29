@@ -1,0 +1,70 @@
+doctype html
+ScrollView.page
+    StackLayout.start-background
+        StackLayout.back
+            Label(text="<Atrás", [nsRouterLink]="['/']")
+        StackLayout.form
+            Image.logo-centered(src="~/assets/img/logoone.png" verticalAlign="bottom")    
+            //Nombre Input
+            Label.input-label(text="Nombre")
+            TextField.full-width(
+                class="input input-border",
+                height=40,
+                paddingBottom="5",
+                #nameField="ngModel",
+                [(ngModel)]="name",
+                paddingTop="5",
+                required
+                )
+            Label.input-error(text="Campo requerido", *ngIf="submitted && nameField.errors?.required")
+            
+            //Email Input
+            Label.input-label(text="Elige un email")
+            TextField.full-width(
+                class="input input-border",
+                keyboard-type="email",
+                height=40,
+                #emailField="ngModel",  
+                [(ngModel)]="email",                              
+                paddingBottom="5",
+                paddingTop="5",
+                email,
+                required)
+            Label.input-error(text="Campo requerido", *ngIf="submitted && emailField.errors?.required")
+            Label.input-error(text="Email inválido", *ngIf="submitted && emailField.errors?.email")
+            
+            //Password Input
+            Label.input-label(text="Selecciona un password")
+            TextField.full-width(
+                class="input input-border"
+                secure="true"
+                height=40
+                #passwordField="ngModel",  
+                [(ngModel)]="password",  
+                paddingBottom="5"
+                paddingTop="5",
+                required,
+                minlength="6")
+            Label.input-error(text="Campo requerido", *ngIf="submitted && passwordField.errors?.required")
+            Label.input-error(text="La contraseña debe tener al menos 6 caracteres", *ngIf="submitted && passwordField.errors?.minlength")
+            
+                
+            //Password confirm Input
+            Label.input-label(text="Repite tu password")
+            TextField.full-width(
+                class="input input-border"
+                height=40
+                secure="true"
+                paddingBottom="5"
+                #confirmPasswordField="ngModel",  
+                [(ngModel)]="confirmPassword",  
+                paddingTop="5",
+                [equalTo]="passwordField")
+            Label.input-error(text="Las contraseñas no coinciden", *ngIf="submitted && confirmPasswordField.errors?.equalTo")
+            
+
+            FlexboxLayout
+                Label.h3.m-15.white-text(textWrap="true" width="75%" text="He leído y acepto los términos y condiciones")
+                Switch.switch(checked="false", [(ngModel)]="privacyPolicy", width="25%")                    
+            Button.button-left-white.borderless-button.large-text([class.disabled]="!privacyPolicy", [isEnabled]="privacyPolicy", text="GO", (tap)="submit() && emailField.valid && nameField.valid && passwordFiel.valid && confirmPasswordField.valid && register()")
+            

@@ -1,0 +1,25 @@
+
+<StackLayout>
+  <StackLayout class="background-blue" height="60" orientation="horizontal" padding="5" verticalAlignment="center">
+    <Image height="15" width="20%" src="~/assets/img/close.png" (tap)="myOrders()"></Image>
+    <Image height="30" width="60%" src="~/assets/img/logoicon.png"></Image>
+  </StackLayout>
+  <StackLayout class="background-blue" orientation="vertical" horizontalAlignment="center">
+    <Image class="img-rounded" [src]="order.worker.image" heigth="90" marginTop="20" width="90"></Image>
+    <Label class="white-text" [text]="order.worker.name" horizontalAlignment="center"></Label>
+    <Label class="large-text white-text" *ngIf="order.success" text="Operación en curso" horizontalAlignment="center"></Label>
+    <GridLayout rows="auto,auto,auto,auto" columns="*,*" padding="60">
+      <Label class="white-text" col="0" row="0" text="Servicio:"></Label>
+      <Label class="white-text" col="0" row="1" text="Costo:"></Label>
+      <Label class="white-text" col="0" row="2" text="Orden:"></Label>
+      <Label class="white-text" col="0" row="3" text="Fecha:"></Label>
+      <Label class="white-text" col="1" row="0" [text]="order.name"></Label>
+      <Label class="white-text" col="1" row="1" [text]="'$' + order.price"></Label>
+      <Label class="white-text" col="1" row="2" [text]="order.id"></Label>
+      <Label class="white-text" col="1" row="3" [text]="order.date"></Label>
+    </GridLayout>
+  </StackLayout>
+  <StackLayout class="background-blue" height="100%" verticalAlignment="bottom">
+    <Button class="borderless-button white-text" text="Cancelar servicio"></Button>
+  </StackLayout>
+</StackLayout>

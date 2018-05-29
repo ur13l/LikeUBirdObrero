@@ -1,0 +1,39 @@
+
+<RadSideDrawer tkExampleTitle="tkExampleTitle" tkToggleNavButton="tkToggleNavButton" [drawerLocation]="currentLocation">
+  <StackLayout class="sideStackLayout" tkDrawerContent="tkDrawerContent">
+    <StackLayout class="sideTitleStackLayout">
+      <Image class="image-margin" src="~/assets/img/logoicon.png" height="60"></Image>
+    </StackLayout>
+    <StackLayout class="sideStackLayout">
+      <StackLayout class="sideItem" orientation="horizontal" (tap)="navigate('/home')">
+        <Image height="20" src="~/assets/img/home.png" verticalAlignment="center"></Image>
+        <Label class="sideLabel" text="Home" verticalAlignment="center"></Label>
+      </StackLayout>
+      <StackLayout class="sideItem" orientation="horizontal" (tap)="navigate('/history')">
+        <Image height="20" src="~/assets/img/history.png" verticalAlignment="center"></Image>
+        <Label class="sideLabel" text="Historial" verticalAlignment="center"></Label>
+      </StackLayout>
+      <StackLayout class="sideItem" orientation="horizontal" (tap)="navigate('/payments')">
+        <Image height="20" src="~/assets/img/discount.png" verticalAlignment="center"></Image>
+        <Label class="sideLabel" text="Mis Cobros" verticalAlignment="center"></Label>
+      </StackLayout>
+      <StackLayout class="sideItem" orientation="horizontal" (tap)="navigate('/help')">
+        <Image height="20" src="~/assets/img/help.png" verticalAlignment="center"></Image>
+        <Label class="sideLabel" text="Ayuda" verticalAlignment="center"></Label>
+      </StackLayout>
+      <StackLayout class="sideItem" orientation="horizontal" (tap)="navigate('/settings')">
+        <Image height="20" src="~/assets/img/settings.png" verticalAlignment="center"></Image>
+        <Label class="sideLabel" text="Configuración" verticalAlignment="center"></Label>
+      </StackLayout>
+    </StackLayout>
+    <Label text="Cerrar sesión" color="lightgray" padding="15" verticalAlignment="bottom" (tap)="logout()"></Label>
+  </StackLayout>
+  <StackLayout tkMainContent="tkMainContent">
+    <StackLayout class="menu-bar" orientation="horizontal">
+      <StackLayout width="20%"></StackLayout>
+      <Image height="25" width="60%" src="~/assets/img/logoicon.png"></Image>
+      <Image height="15" width="20%" (tap)="openDrawer()" src="~/assets/img/menu.png"></Image>
+    </StackLayout>
+    <page-router-outlet></page-router-outlet>
+  </StackLayout>
+</RadSideDrawer>

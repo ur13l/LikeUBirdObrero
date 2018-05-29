@@ -1,0 +1,14 @@
+doctype html
+StackLayout.page
+    StackLayout.third-bar(orientation="horizontal", width="100%", horizontalAlignment="center", verticalAlignment="center")
+        StackLayout(width="15%", verticalAlignment="center", horizontalAlignment="center", height="100%", [class.selected]="!filter")
+            Image(height="30%", (tap)="setFilter(null)", src="~/assets/img/list.png")
+        StackLayout(width="15%", verticalAlignment="center", horizontalAlignment="center", height="100%", [class.selected]="filter == 'worker'")
+            Image(height="30%", (tap)="setFilter('worker')", src="~/assets/img/profile.png")
+        StackLayout(width="15%", verticalAlignment="center", horizontalAlignment="center", height="100%", [class.selected]="filter == 'shop'")
+            Image(height="30%", (tap)="setFilter('shop')", src="~/assets/img/shop.png")
+    StackLayout
+        WorkerItem(*ngFor="let worker of workers", [worker]="worker", [filter]="filter")
+    StackLayout.background-blue(height="100%")   
+    
+    

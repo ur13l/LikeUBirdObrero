@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<ScrollView class="page">
+  <StackLayout class="start-background">
+    <StackLayout class="back">
+      <Label text="&lt;Atrás" [nsRouterLink]="['/']"></Label>
+    </StackLayout>
+    <StackLayout class="form">
+      <Image class="logo-centered" src="~/assets/img/logoone.png" verticalAlign="bottom">   </Image>
+      <!--Nombre Input-->
+      <Label class="input-label" text="Nombre"></Label>
+      <TextField class="full-width input input-border" height="40" paddingBottom="5" #nameField="ngModel" [(ngModel)]="name" paddingTop="5" required></TextField>
+      <Label class="input-error" text="Campo requerido" *ngIf="submitted &amp;&amp; nameField.errors?.required"></Label>
+      <!--Email Input-->
+      <Label class="input-label" text="Elige un email"></Label>
+      <TextField class="full-width input input-border" keyboard-type="email" height="40" #emailField="ngModel" [(ngModel)]="email" paddingBottom="5" paddingTop="5" email required></TextField>
+      <Label class="input-error" text="Campo requerido" *ngIf="submitted &amp;&amp; emailField.errors?.required"></Label>
+      <Label class="input-error" text="Email inválido" *ngIf="submitted &amp;&amp; emailField.errors?.email"></Label>
+      <!--Password Input-->
+      <Label class="input-label" text="Selecciona un password"></Label>
+      <TextField class="full-width input input-border" secure="true" height="40" #passwordField="ngModel" [(ngModel)]="password" paddingBottom="5" paddingTop="5" required minlength="6"></TextField>
+      <Label class="input-error" text="Campo requerido" *ngIf="submitted &amp;&amp; passwordField.errors?.required"></Label>
+      <Label class="input-error" text="La contraseña debe tener al menos 6 caracteres" *ngIf="submitted &amp;&amp; passwordField.errors?.minlength"></Label>
+      <!--Password confirm Input-->
+      <Label class="input-label" text="Repite tu password"></Label>
+      <TextField class="full-width input input-border" height="40" secure="true" paddingBottom="5" #confirmPasswordField="ngModel" [(ngModel)]="confirmPassword" paddingTop="5" [equalTo]="passwordField"></TextField>
+      <Label class="input-error" text="Las contraseñas no coinciden" *ngIf="submitted &amp;&amp; confirmPasswordField.errors?.equalTo"></Label>
+      <FlexboxLayout>
+        <Label class="h3 m-15 white-text" textWrap="true" width="75%" text="He leído y acepto los términos y condiciones"></Label>
+        <Switch class="switch" checked="false" [(ngModel)]="privacyPolicy" width="25%">                   </Switch>
+      </FlexboxLayout>
+      <Button class="button-left-white borderless-button large-text" [class.disabled]="!privacyPolicy" [isEnabled]="privacyPolicy" text="GO" (tap)="submit() &amp;&amp; emailField.valid &amp;&amp; nameField.valid &amp;&amp; passwordFiel.valid &amp;&amp; confirmPasswordField.valid &amp;&amp; register()"></Button>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

@@ -1,0 +1,6 @@
+.start-background {
+    background-image: 'url("~/assets/img/backone.jpg")';
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

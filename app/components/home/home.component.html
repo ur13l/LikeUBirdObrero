@@ -1,0 +1,51 @@
+
+<StackLayout height="100%">
+  <StackLayout class="secondary-bar" orientation="horizontal" verticalAlignment="center" (tap)="marketPlace()">
+    <StackLayout width="85%" orientation="horizontal">
+      <Image height="25" width="10%" src="~/assets/img/fast-delivery.png"></Image>
+      <Label class="white-text" verticalAlignment="center" text="Market Place"></Label>
+    </StackLayout>
+    <StackLayout width="150%" horizontalAlignment="right" verticalAlignment="center">
+      <Label text="Offline" (tap)="toggleOffline()" *ngIf="!offline"></Label>
+      <Label text="Online" (tap)="toggleOffline()" *ngIf="offline"></Label>
+    </StackLayout>
+  </StackLayout>
+  <StackLayout *ngIf="!offline">
+    <StackLayout *ngFor="let service of services">
+      <StackLayout class="menu-item background-blue" *ngIf="service.confirmed" height="130" orientation="horizontal" (tap)="confirmService(service)">
+        <StackLayout verticalAlignment="center" width="30%">
+          <Image class="img-rounded" [src]="service.image" width="60" height="60" stretch="aspectFill"></Image>
+        </StackLayout>
+        <StackLayout width="40%" verticalAlignment="center">
+          <Label class="white-text" [text]="service.name"></Label>
+          <Label class="secondary-text" [text]="'$' + service.price"></Label>
+        </StackLayout>
+        <StackLayout width="40%" verticalAlignment="center">
+          <Label class="white-text" text="Hace {{service.time}} minutos."></Label>
+          <Label class="secondary-text" text="{{service.distance}} km"></Label>
+        </StackLayout>
+      </StackLayout>
+    </StackLayout>
+    <StackLayout *ngFor="let service of services">
+      <StackLayout class="menu-item background-blue" *ngIf="!service.confirmed" height="130" orientation="horizontal">
+        <StackLayout verticalAlignment="center" width="30%">
+          <Image class="img-rounded" [src]="service.image" width="60" height="60" stretch="aspectFill"></Image>
+        </StackLayout>
+        <StackLayout width="40%" verticalAlignment="center">
+          <Label class="white-text" [text]="service.name"></Label>
+          <Label class="secondary-text" [text]="'$' + service.price"></Label>
+          <StackLayout class="button-stack" verticalAlignment="center" (tap)="confirmService(service)">
+            <Label text="Confirmar Servicio"></Label>
+          </StackLayout>
+        </StackLayout>
+        <StackLayout width="40%" verticalAlignment="center">
+          <Label class="white-text" text="Hace {{service.time}} minutos."></Label>
+          <Label class="secondary-text" text="{{service.distance}} km"></Label>
+        </StackLayout>
+      </StackLayout>
+    </StackLayout>
+  </StackLayout>
+  <StackLayout class="background-blue" height="100%" marginTop="1" verticalAlignment="center" *ngIf="offline">
+    <Label text="Mientras estés en modo offline no podrás ver las solicitudes realizadas." textWrap="true"></Label>
+  </StackLayout>
+</StackLayout>

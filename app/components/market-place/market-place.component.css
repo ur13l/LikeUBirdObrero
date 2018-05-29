@@ -1,0 +1,17 @@
+.market-place {
+
+}
+
+.chat-message-enter {
+    color:white;
+    background-color: #14575e;
+    padding:10;
+    border-radius: 10;
+}
+
+.chat-message-sent {
+    color:white;
+    background-color: #6e434c;
+    border-radius: 10;
+    padding:10;
+}

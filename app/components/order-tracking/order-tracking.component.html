@@ -1,0 +1,20 @@
+
+<StackLayout orientation="vertical">
+  <StackLayout height="85%">
+    <GridLayout columns="*" rows="*">
+      <MapView col="0" row="0" [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" mapAnimationsEnabled="true" (mapReady)="onMapReady($event)"></MapView>
+    </GridLayout>
+  </StackLayout>
+  <StackLayout class="background-blue" height="15%" padding="10" orientation="horizontal">
+    <StackLayout width="30%" verticalAlignment="center">
+      <Image class="img-rounded" [src]="order.worker.image" stretch="aspectFill" height="60" width="60"></Image>
+    </StackLayout>
+    <StackLayout orientation="vertical" width="40%" marginLeft="4%" verticalAlignment="center">
+      <Label class="white-text" [text]="order.worker.name"></Label>
+      <Label class="secondary-text" [text]="order.name"></Label>
+    </StackLayout>
+    <StackLayout orientation="vertical" width="30%" marginLeft="4%" verticalAlignment="center">           
+      <Image src="~/assets/img/checked-white.png" width="25" (tap)="rating()"></Image>
+    </StackLayout>
+  </StackLayout>
+</StackLayout>

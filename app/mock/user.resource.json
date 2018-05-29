@@ -1,0 +1,20 @@
+{
+    "data": {
+        "token": "bwqbw1brb31bb531518br3189b13108bd8031b92",
+        "email": "ur13l.infante@gmail.com",
+        "name": "Uriel Infante",
+        "address": "Av. Torres de Satélite 340, Ciudad Satélite 53125",
+        "image": "https://www.mastermagazine.info/termino/wp-content/uploads/Usuario-Icono.jpg",
+        "latitude": 19.499074,
+        "longitude": -99.236763,
+        "phone": "4771663672",
+        "payment_methods": [
+            {
+                "cc_number": "5579070055520920",
+                "type": "Mastercard",
+                "last_four": "0920",
+                "icon": "~/assets/img/mastercard.png"
+            }
+        ]
+    }
+}

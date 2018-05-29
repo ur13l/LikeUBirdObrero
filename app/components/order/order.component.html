@@ -1,0 +1,42 @@
+
+<StackLayout class="page">
+  <StackLayout class="background-blue item" orientation="horizontal" padding="10">
+    <StackLayout width="30%" verticalAlignment="center">
+      <Image class="img-rounded" [src]="order.worker.image" stretch="none" height="60" width="60"></Image>
+    </StackLayout>
+    <StackLayout orientation="vertical" width="30%" marginLeft="4%" verticalAlignment="center">
+      <Label [text]="order.worker.name"></Label>
+    </StackLayout>
+    <StackLayout orientation="vertical" width="40%" marginLeft="4%" verticalAlignment="center">           
+      <Label text="¿Cómo estás?" marginRight="20"></Label>
+    </StackLayout>
+  </StackLayout>
+  <StackLayout class="line">   </StackLayout>
+  <StackLayout class="background-blue" horizontalAlignment="right" width="100%" padding="10" orientation="horizontal">
+    <Image class="img-rounded" src="~/assets/img/filled-circle.png" height="20" width="20">   </Image>
+    <Label class="white-text" text="Hoy"></Label>
+  </StackLayout>
+  <StackLayout class="line"></StackLayout>
+  <StackLayout class="background-blue" orientation="horizontal" padding="10">
+    <GridLayout columns="*,*,*" rows="auto,auto,auto" padding="10">
+      <Label class="bold" horizontalAlignment="center" col="0" row="0" text="Servicio del día"></Label>
+      <Label class="bold" horizontalAlignment="center" col="1" row="0" text="Fecha"></Label>
+      <Label class="bold" horizontalAlignment="center" col="2" row="0" text="Importe"></Label>
+      <Label horizontalAlignment="center" col="0" row="1" [text]="order.name"></Label>
+      <Label horizontalAlignment="center" col="1" row="1" [text]="order.date"></Label>
+      <Label horizontalAlignment="center" col="2" row="1" [text]="'$' + order.price"></Label>
+      <StackLayout orientation="horizontal" colspan="2" col="0" row="2" horizontalAlignment="center" paddingTop="20" verticalAlignment="center">
+        <Image class="img-rounded" [src]="user.image" height="30" width="30" stretch="aspectFill"></Image>
+        <Label class="bold" marginLeft="10" horizontalAlignment="center" [text]="user.name"></Label>
+      </StackLayout>
+      <Label class="secondary-text" horizontalAlignment="center" col="2" row="2" [text]="order.worker.km + 'km'" verticalAlignment="center"></Label>
+    </GridLayout>
+  </StackLayout>
+  <StackLayout class="line">   </StackLayout>
+  <StackLayout class="background-blue" orientation="horizontal" padding="10" width="100%" (tap)="track()" horizontalAlignment="center" verticalAlignment="center">
+    <Label text="En camino" marginRight="20"></Label>
+    <Image src="~/assets/img/fast-delivery.png" height="30"></Image>
+  </StackLayout>
+  <StackLayout class="line"></StackLayout>
+  <StackLayout class="background-blue" height="100%"></StackLayout>
+</StackLayout>

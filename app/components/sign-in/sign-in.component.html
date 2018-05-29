@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<FlexboxLayout class="page start-background">
+  <StackLayout class="back">
+    <Label text="&lt;Atrás" [nsRouterLink]="['/']"></Label>
+  </StackLayout>
+  <StackLayout class="form">
+    <Image class="logo-centered" src="~/assets/img/logoone.png" verticalAlign="bottom">   </Image>
+    <!--Email Input-->
+    <Label class="input-label" text="Email"></Label>
+    <TextField class="full-width input input-border" keyboard-type="email" height="40" [(ngModel)]="email" paddingBottom="5" paddingTop="5" #emailField="ngModel" email required></TextField>
+    <Label class="input-error" text="Email inválido" *ngIf="submitted &amp;&amp; emailField.errors.email"></Label>
+    <Label class="input-error" text="Campo requerido" *ngIf="submitted &amp;&amp; emailField.errors.required"></Label>
+    <!--Password Input-->
+    <Label class="input-label" text="Password"></Label>
+    <TextField class="full-width input input-border" secure="true" [(ngModel)]="password" height="40" paddingBottom="5" #passwordField="ngModel" paddingTop="5" required> </TextField>
+    <Label class="input-error" text="Campo requerido" *ngIf="submitted &amp;&amp; emailField.errors.required"></Label>
+    <Button class="button-left-white borderless-button large-text" text="GO" (tap)="submit() &amp;&amp; emailField.valid &amp;&amp; passwordField.valid &amp;&amp; login()"></Button>
+  </StackLayout>
+</FlexboxLayout>

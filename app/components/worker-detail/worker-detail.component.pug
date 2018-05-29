@@ -1,0 +1,18 @@
+StackLayout.background-blue(height="100%", orientation="vertical", horizontalAlignment="center", style="overflow:visible")
+    Image.img-rounded([src]="worker.image", heigth="100", marginTop="20", width="100")
+    Label([text]="worker.name", horizontalAlignment="center")
+    Label.secondary-text([text]="worker.km + ' km'", horizontalAlignment="center", marginTop="5")
+    Label([text]="worker.description", horizontalAlignment="center", margin="10", textWrap="true")
+    Label(text="Servicios:", marginTop="20", marginLeft="10", wrapping="true")
+    GridLayout(columns="*, *", rows="auto,auto,auto")
+        StackLayout(orientation="horizontal", margin="10", [col]="i % 2 == 0 ? 0 : 1", [row]="floor((i)/2)", height="20", *ngFor="let skill of worker.skills; let i = index", verticalAlignment="center")
+            Image(height="20", [src]="skill.icon")
+            Label([text]="skill.name", textWrap="true")
+    Label(text="Fotos:", marginTop="10", marginLeft="10")
+    GridLayout(columns="auto, auto, auto, auto", rows="auto")
+        StackLayout(marginLeft="10", orientation="horizontal", height="50", width="50", margin="1", [col]="i", [row]="0", *ngFor="let photo of worker.photos; let i = index", verticalAlignment="center")
+            Image([src]="photo.url", stretch="aspectFill")
+    StackLayout(verticalAlignment="bottom", height="100%")
+        Button.bottom-button(text="Solicitar servicio", (tap)="makeOrder()")
+            
+            

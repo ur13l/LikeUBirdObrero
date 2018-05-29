@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<StackLayout class="page">
+  <StackLayout class="third-bar" orientation="horizontal" width="100%" horizontalAlignment="center" verticalAlignment="center">
+    <StackLayout width="15%" verticalAlignment="center" horizontalAlignment="center" height="100%" [class.selected]="!filter">
+      <Image height="30%" (tap)="setFilter(null)" src="~/assets/img/list.png"></Image>
+    </StackLayout>
+    <StackLayout width="15%" verticalAlignment="center" horizontalAlignment="center" height="100%" [class.selected]="filter == 'worker'">
+      <Image height="30%" (tap)="setFilter('worker')" src="~/assets/img/profile.png"></Image>
+    </StackLayout>
+    <StackLayout width="15%" verticalAlignment="center" horizontalAlignment="center" height="100%" [class.selected]="filter == 'shop'">
+      <Image height="30%" (tap)="setFilter('shop')" src="~/assets/img/shop.png"></Image>
+    </StackLayout>
+  </StackLayout>
+  <StackLayout>
+    <WorkerItem *ngFor="let worker of workers" [worker]="worker" [filter]="filter"></WorkerItem>
+  </StackLayout>
+  <StackLayout class="background-blue" height="100%">  </StackLayout>
+</StackLayout>

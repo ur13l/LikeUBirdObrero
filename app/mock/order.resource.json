@@ -1,0 +1,54 @@
+{
+    "data": {
+        "success": true,
+        "name": "Reparación de fuga",
+        "price": 730,
+        "id": 64567,
+        "time": 30,
+        "worker": {
+            "id": "1",
+            "name": "Mtro. Torres",
+            "km": "3100",
+            "rating": 9.0,
+            "description": "Más de diez años me respaldan, me gusta realizar todo con extrema higiene y cuidado.",
+            "image": "https://fscomps.fotosearch.com/compc/CSP/CSP436/3d-s%C3%BAper-plomero-vuelo-con-caja-de-colecci%C3%B3n-de-ilustraciones__k33707897.jpg",
+            "type": "worker",
+            "skills" : [
+                {
+                    "name": "Reparación de fugas",
+                    "icon": "~/assets/img/tap.png"
+                },
+                {
+                    "name": "Instalación Boiler",
+                    "icon": "~/assets/img/water-heater.png"
+                },
+                {
+                    "name": "Instalación Lavabo",
+                    "icon": "~/assets/img/sink.png"
+                },
+                {
+                    "name": "Mantenimiento Estufa",
+                    "icon": "~/assets/img/stove.png"
+                },
+                {
+                    "name": "Destape",
+                    "icon": "~/assets/img/desatascador.png"
+                }
+            ],
+            "photos": [
+                {
+                    "url": "~/assets/img/plomeria.png"
+                },
+                {
+                    "url": "~/assets/img/computacion.jpg"
+                },
+                {
+                    "url": "~/assets/img/gimnasios.jpg"
+                },
+                {
+                    "url": "~/assets/img/limpieza.jpg"
+                }
+            ]
+        }
+    }
+}

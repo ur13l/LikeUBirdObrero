@@ -1,0 +1,13 @@
+StackLayout.background-blue(height="100%")
+    StackLayout.item-background(*ngFor="let method of paymentMethods", orientation="horizontal", width="90%", padding="10", horizontalAlignment="center", verticalAlignment="center", (tap)="setDefaultMethod(method)")
+        StackLayout(width="15%", verticalAlignment="center", horizontalAlignment="center")
+            Image(src="~/assets/img/checked-white.png", *ngIf="method.checked", width="20")
+        StackLayout(width="70%", orientation="horizontal", horizontalAlignment="center")
+            Image([src]="method.icon")
+            Label.white-text(marginLeft="10", verticalAlignment="center", text="**** **** **** {{method.last_four}}")
+        StackLayout(width="15%", verticalAlignment="center", horizontalAlignment="center")
+            Image(src="~/assets/img/edit-secondary.png", width="15")
+        
+    StackLayout.item-background((tap)="addPaymentMethod()", orientation="horizontal", width="90%", padding="10", horizontalAlignment="center", verticalAlignment="center")
+        Image(src="~/assets/img/add-plus-button.png", height="20", width="20")
+        Label.secondary-text.bold(marginLeft="10", text="Agregar método de pago", verticalAlignment="center")

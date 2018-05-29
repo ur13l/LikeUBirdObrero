@@ -1,0 +1,275 @@
+/*
+In NativeScript, the app.css file is where you place CSS rules that
+you would like to apply to your entire application. Check out
+http://docs.nativescript.org/ui/styling for a full list of the CSS
+selectors and properties you can use to style UI components.
+
+/*
+In many cases you may want to use the NativeScript core theme instead
+of writing your own CSS rules. For a full list of class names in the theme
+refer to http://docs.nativescript.org/ui/theme.
+*/
+@import '~nativescript-theme-core/css/core.light.css';
+
+
+
+
+.start-background {
+    background-image: 'url("~/assets/img/backone.jpg")';
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.button-field-white {
+    margin-top:50%;
+}
+
+.page {
+    align-items: center;
+    flex-direction: column;
+  }
+  .form {
+    margin-left: 30;
+    margin-right: 30;
+    flex-grow: 2;
+    vertical-align: middle;
+  }
+
+  .button-left-white, .button-right-white {
+    background-color:rgba(0,0,0,0);
+    color:white;
+    border-bottom: 1px solid white;
+    margin-top:15;
+    margin-bottom:10;
+    width:100%;
+}
+
+.logo-centered {
+    width: 170;
+}
+
+
+
+.button-left-white {
+    margin-top:50;
+}
+
+.input {
+    color: white;
+    placeholder-color: white;
+    padding: 0px !important;
+}
+
+
+.input-border {
+    padding: 0;
+}
+
+.input * {
+    margin: 0;
+}
+
+.input-label {
+    color:white;
+    margin-top: 20;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.white-text {
+    color:white;
+}
+
+
+.large-text {
+    font-size: 35;
+}
+
+.medium-text {
+    font-size: 24;
+}
+
+.borderless-button {
+        border-color: transparent;
+        border-width: 1;
+    
+}
+
+.back {
+    color:white;
+    float: left;
+    width:100%;
+    font-size: 16;
+    padding: 10;
+}
+
+
+.plomeria {  
+    background-image: 'url("~/assets/img/plomeria.png")';
+    background-size: cover;
+    background-position: center;
+}
+
+.computacion {
+    background-image: url('~/assets/img/computacion.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.pintura {
+    background-image: url('~/assets/img/pintura.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.gimnasios {
+    background-image: url('~/assets/img/gimnasios.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.limpieza {
+    background-image: url('~/assets/img/limpieza.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.home {
+
+}
+
+.menu-bar {
+    background: #3F3540;
+    height:8%;
+}
+
+.secondary-bar {
+    background: #282F39;
+    height:6%;
+}
+
+.third-bar {
+    background: #282F39;
+    height:10%;
+}
+
+.menu-item {
+    margin-top: 2;
+    vertical-align: middle;
+    align-items: center;
+    height:18%;
+    background-size: cover;
+    background-position: center;
+
+
+}
+
+.menu-item *{
+    text-align: center;
+
+}
+
+.black-mask {
+    vertical-align: middle;
+    align-items: center;
+    height:100%;
+    background-color: rgba(0,0,0,0.25)
+}
+
+.top-background{
+    background-image: 'url("~/assets/img/plomeria.png")';
+    background-size: cover;
+    background-position: center;
+    height: 20%;
+}
+
+
+.input-error {
+    color:#ff7777;
+}
+
+.disabled {
+    color: gray;
+}
+
+.img-rounded{
+    border-radius: 50%;
+    border-color: gray;
+    border-width: 0.5;
+    object-fit: cover;
+    width: auto;
+    height: auto;
+}
+
+.background-blue {
+    background-color: #282F39;
+}
+
+.selected {
+    background-color: #080f19
+}
+
+
+.item {
+    margin-top: 1;
+    height: 100;
+}
+
+.secondary-text {
+    color: #70efe6;
+    font-size: 14
+}
+
+.bottom-button {
+    background-color:rgba(0,0,0,0);
+    color:white;
+    width:100%;
+    border-color: #70efe6;
+    border-width: 2;
+}
+
+.dropdown-style {
+    padding: 15;
+}
+
+.dropdown-style::option {
+    background-color: #080f19;
+  }
+
+.bold {
+    font-weight: bold;
+}
+
+.line {
+    background: white;
+    height: 1;
+}
+
+.white-text-field {
+    background: white;
+    height:200;
+    color: #282F39;
+}
+
+.address-block {
+    background:white;
+    margin: 5%;
+    padding:10;
+}
+
+.item-background {
+    background-color :#3C4252;
+    height:50;
+    margin-top: 10;
+    margin-left: 10;
+    margin-right: 10;
+}
+
+.button-stack {
+    height:40;
+    border-color: white;
+    border-width: 1;
+}

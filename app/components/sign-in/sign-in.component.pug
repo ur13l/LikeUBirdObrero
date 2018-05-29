@@ -1,0 +1,37 @@
+doctype html
+FlexboxLayout.page.start-background
+    StackLayout.back
+        Label(text="<Atrás", [nsRouterLink]="['/']")
+    StackLayout.form
+        Image.logo-centered(src="~/assets/img/logoone.png" verticalAlign="bottom")    
+       
+        //Email Input
+        Label.input-label(text="Email")
+        TextField.full-width(
+            class="input input-border",
+            keyboard-type="email",
+            height=40,
+            [(ngModel)]="email",
+            paddingBottom="5",
+            paddingTop="5",
+            #emailField="ngModel",
+            email,
+            required)
+        Label.input-error(text="Email inválido", *ngIf="submitted && emailField.errors.email")
+        Label.input-error(text="Campo requerido", *ngIf="submitted && emailField.errors.required")
+        
+        //Password Input
+        Label.input-label(text="Password")
+        TextField.full-width(
+            class="input input-border",
+            secure="true",
+            [(ngModel)]="password",
+            height=40,
+            paddingBottom="5",
+            #passwordField="ngModel",
+            paddingTop="5",
+            required) 
+        Label.input-error(text="Campo requerido", *ngIf="submitted && emailField.errors.required")
+
+        Button.button-left-white.borderless-button.large-text(text="GO", (tap)="submit() && emailField.valid && passwordField.valid && login()")
+        

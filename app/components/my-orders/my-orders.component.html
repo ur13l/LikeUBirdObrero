@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<ScrollView class="page">
+  <StackLayout class="worker-container">
+    <StackLayout class="background-blue item" *ngFor="let order of orders" orientation="horizontal" (tap)="openOrder(order)">
+      <StackLayout width="20%" verticalAlignment="center">
+        <Image class="img-rounded" [src]="order.worker.image" stretch="aspectFill" height="60" width="60"></Image>
+      </StackLayout>
+      <StackLayout orientation="vertical" width="50%" marginLeft="4%" verticalAlignment="center">
+        <Label [text]="order.worker.name"></Label>
+        <Label class="secondary-text" [text]="order.name"></Label>
+      </StackLayout>
+      <StackLayout width="30%">
+        <StackLayout class="dark-background" verticalAlignment="center" horizontalAlign="left" orientation="vertical" margin="20">
+          <Label text="En {{order.time}} minutos"></Label>
+          <StackLayout orientation="horizontal">
+            <Image height="20" src="~/assets/img/delivery-truck.png"></Image>
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

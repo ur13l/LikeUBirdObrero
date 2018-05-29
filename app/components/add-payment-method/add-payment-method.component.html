@@ -1,0 +1,26 @@
+
+<StackLayout class="background-blue" height="100%">
+  <StackLayout margin="10">
+    <Label text="Tipo y número de tarjeta"></Label>
+    <TextField class="text-edit-blue" [(ngModel)]="paymentMethod.cc_number" #ccNumber="ngModel" required="required" maxlength="16" minlength="16" keyboardtype="number"></TextField>
+    <Label class="input-error" text="Número incorrecto" *ngIf="submitted &amp;&amp; (!ccNumber.valid)"></Label>
+  </StackLayout>
+  <StackLayout orientation="horizontal" width="100%" margin="10">
+    <StackLayout width="50%" margin="10">
+      <Label text="Fecha que expira"></Label>
+      <StackLayout orientation="horizontal">
+        <TextField class="text-edit-blue" [(ngModel)]="paymentMethod.month" #mm="ngModel" width="49%" hint="MM" minlength="2" maxlength="2" min="1" max="12" required="required" keyboardtype="number"></TextField>
+        <TextField class="text-edit-blue" [(ngModel)]="paymentMethod.year" #yy="ngModel" width="49%" marginLeft="10" hint="YY" minlength="2" maxlength="2" required="required" keyboardtype="number"></TextField>
+      </StackLayout>
+      <Label class="input-error" text="Fecha inválida" *ngIf="submitted &amp;&amp; (mm.errors|| yy.errors)"></Label>
+    </StackLayout>
+    <StackLayout width="40%" margin="10">
+      <Label text="CVV"></Label>
+      <TextField class="text-edit-blue" [(ngModel)]="paymentMethod.cvv" #cvv="ngModel" required="required" maxlength="4" minlength="3" keyboardtype="number"></TextField>
+      <Label class="input-error" text="CVV inválido" *ngIf="submitted &amp;&amp; (cvv.errors ||cvv.errors)"></Label>
+    </StackLayout>
+  </StackLayout>
+  <StackLayout class="item-background" (tap)="submit() &amp;&amp; ccNumber.valid &amp;&amp; mm.valid &amp;&amp; yy.valid &amp;&amp; cvv.valid &amp;&amp; addPayment()" orientation="horizontal" width="100%" marginLeft="20" marginRight="20" horizontalAlignment="center" verticalAlignment="center">
+    <Label class="secondary-text bold" text="Agregar tarjeta" verticalAlignment="center"></Label>
+  </StackLayout>
+</StackLayout>

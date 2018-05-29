@@ -1,0 +1,13 @@
+StackLayout.background-blue.item(orientation="horizontal", *ngIf="filter == 'worker' || !filter", (tap)="selectWorker()")
+    StackLayout(width="20%", verticalAlignment="center")
+        Image.img-rounded([src]="worker.image", stretch="aspectFill", height="80", width="80")
+    StackLayout(orientation="vertical", width="50%", marginLeft="4%", verticalAlignment="center")
+        Label([text]="worker.name")
+        Label(text="{{worker.km}} km")
+    StackLayout
+        StackLayout.dark-background(verticalAlignment="center", horizontalAlign="left" orientation="vertical", margin="20", width="30%")
+            Image(*ngIf="worker.type == 'worker'", height="20", width="50", src="~/assets/img/profile.png")
+            Image(*ngIf="worker.type == 'shop'", height="20", width="50", src="~/assets/img/shop.png")
+            StackLayout(orientation="horizontal", marginTop="20")
+                Image(height="20", src="~/assets/img/star.png")
+                Label([text]="worker.rating", marginLeft="3")
