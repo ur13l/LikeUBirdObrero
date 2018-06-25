@@ -1,0 +1,30 @@
+
+<ScrollView class="page">
+  <StackLayout orientation="vertical" height="100%">
+    <StackLayout class="background-blue" orientation="vertical" height="30%" [style.background]="'url(&quot;~/assets/img/plomeria.png&quot;)'">
+      <StackLayout class="black-mask">       
+        <StackLayout orientation="horizontal" height="50%">
+          <StackLayout width="15%">     </StackLayout>
+          <Image height="25" width="70%" src="~/assets/img/logoicon.png"></Image>
+        </StackLayout>
+        <StackLayout orientation="horizontal" height="50%">
+          <Label class="medium-text white-text" verticalAlignment="center" horizontalAlignment="center" width="100%" style="text-align: center;" text="Selecciona tu especialidad"></Label>
+        </StackLayout>
+      </StackLayout>
+    </StackLayout>
+    <StackLayout height="70%">
+      <StackLayout class="background-white item" *ngFor="let job of jobs" [nsRouterLink]="['/certification-lub']" height="60" orientation="horizontal">
+        <StackLayout width="20%" verticalAlignment="center">
+          <Image [src]="job.image" stretch="aspectFill" height="30" width="30"></Image>
+        </StackLayout>
+        <StackLayout orientation="vertical" width="50%" marginLeft="4%" verticalAlignment="center">
+          <Label [text]="job.name"></Label>
+        </StackLayout>
+        <StackLayout width="30%" verticalAlignment="center">
+          <Image src="~/assets/img/ubird.png" stretch="aspectFill" height="30" width="30"></Image>
+        </StackLayout>
+        <StackLayout class="line-purple"></StackLayout>
+      </StackLayout>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

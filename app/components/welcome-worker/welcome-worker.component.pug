@@ -1,0 +1,17 @@
+StackLayout(orientation="vertical")
+    StackLayout.background-blue(orientation="vertical", height="30%", [style.background]="'url(\"~/assets/img/plomeria.png\")'")
+        StackLayout.black-mask        
+            StackLayout(orientation="horizontal", height="50%")
+                StackLayout(width="15%")      
+                Image(height="25" width="70%" src="~/assets/img/logoicon.png")
+            StackLayout(orientation="horizontal", height="50%")
+                Label.medium-text.white-text(verticalAlignment="center", horizontalAlignment="center", width="100%", style="text-align: center;", text="Buscar trabajo")
+    ScrollView(height="70%")
+        StackLayout.form(orientation="vertical")
+            Label.center-align(textWrap="true", text="Bienvenido, Uriel. Ahora puedes disfrutar de LUB Mercado Vivo, Solución rápida para encontrar trabajo a través del Mapa Interactivo", textAlign="center")
+            FlexboxLayout
+                Label.h3.m-15(textWrap="true" width="75%" text="Mantenerme conectado")
+                Switch.switch(checked="false", width="25%")  
+            Button.purple-button(text="Comenzar", [nsRouterLink]="['/home']")
+            Button.text-button(text="Sign Up", [nsRouterLink]="['/certification-lub']")
+            

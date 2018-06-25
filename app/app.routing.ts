@@ -28,6 +28,9 @@ import { ConfirmServiceComponent } from "~/components/confirm-service/confirm-se
 import { HistoryComponent } from "~/components/history/history.component";
 import { PaymentsComponent } from "~/components/payments/payments.component";
 import { ServiceConfirmedComponent } from "~/components/service-confirmed/service-confirmed.component";
+import { JobSelectionComponent } from "~/components/job-selection/job-selection.component";
+import { CertificationLubComponent } from "~/components/certification-lub/certification-lub.component";
+import { WelcomeWorkerComponent } from "~/components/welcome-worker/welcome-worker.component";
 
 export const routes: Routes = [
     { path: "", component:AppComponent, children: [
@@ -41,6 +44,9 @@ export const routes: Routes = [
         {path:"market-place", pathMatch:'full', component:MarketPlaceComponent, canActivate:[AuthGuard]},
         {path:"confirm-service", pathMatch:'full', component:ConfirmServiceComponent, canActivate:[AuthGuard]},
         {path:"service-confirmed", pathMatch:'full', component:ServiceConfirmedComponent, canActivate:[AuthGuard]},
+        {path:"job-select", pathMatch:'full', component:JobSelectionComponent},
+        {path:"certification-lub", pathMatch:'full', component:CertificationLubComponent},
+        {path:"welcome-worker", pathMatch:'full', component:WelcomeWorkerComponent},
         
         {
             path:"", component:DrawerComponent, children:[
@@ -63,7 +69,6 @@ export const routes: Routes = [
                 {path:"add-payment-method", pathMatch:'full', component:AddPaymentMethodComponent, canActivate:[AuthGuard]},        
                 {path:"history", pathMatch:'full', component:HistoryComponent, canActivate:[AuthGuard]},        
                 {path:"payments", pathMatch:'full', component:PaymentsComponent, canActivate:[AuthGuard]},        
-                
             ]
         },
         

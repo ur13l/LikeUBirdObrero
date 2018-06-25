@@ -44,6 +44,10 @@ import { ConfirmServiceComponent } from "~/components/confirm-service/confirm-se
 import { HistoryComponent } from "~/components/history/history.component";
 import { PaymentsComponent } from "~/components/payments/payments.component";
 import { ServiceConfirmedComponent } from "~/components/service-confirmed/service-confirmed.component";
+import { JobSelectionComponent } from "~/components/job-selection/job-selection.component";
+import { CertificationLubComponent } from "~/components/certification-lub/certification-lub.component";
+import { WelcomeWorkerComponent } from "~/components/welcome-worker/welcome-worker.component";
+
 declare var GMSServices: any;
 
 if (platform.isIOS) { 
@@ -95,7 +99,10 @@ if (platform.isIOS) {
         ConfirmServiceComponent,
         HistoryComponent,
         PaymentsComponent,
-        ServiceConfirmedComponent
+        ServiceConfirmedComponent,
+        JobSelectionComponent,
+        CertificationLubComponent,
+        WelcomeWorkerComponent
     ],
     providers: [
         AuthService,

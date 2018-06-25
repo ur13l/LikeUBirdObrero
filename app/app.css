@@ -30,8 +30,8 @@ refer to http://docs.nativescript.org/ui/theme.
     flex-direction: column;
   }
   .form {
-    margin-left: 30;
-    margin-right: 30;
+    padding-left: 30;
+    padding-right: 30;
     flex-grow: 2;
     vertical-align: middle;
   }
@@ -56,7 +56,7 @@ refer to http://docs.nativescript.org/ui/theme.
 }
 
 .input {
-    color: white;
+    color: black;
     placeholder-color: white;
     padding: 0px !important;
 }
@@ -95,7 +95,6 @@ refer to http://docs.nativescript.org/ui/theme.
 .borderless-button {
         border-color: transparent;
         border-width: 1;
-    
 }
 
 .back {
@@ -176,7 +175,7 @@ refer to http://docs.nativescript.org/ui/theme.
     vertical-align: middle;
     align-items: center;
     height:100%;
-    background-color: rgba(0,0,0,0.25)
+    background-color: rgba(159, 84, 201, 0.25)
 }
 
 .top-background{
@@ -248,6 +247,11 @@ refer to http://docs.nativescript.org/ui/theme.
     height: 1;
 }
 
+.line-purple {
+    background: #9F54C9;
+    height: 1;
+}
+
 .white-text-field {
     background: white;
     height:200;
@@ -272,4 +276,32 @@ refer to http://docs.nativescript.org/ui/theme.
     height:40;
     border-color: white;
     border-width: 1;
+}
+
+.purple-text {
+    color: #9c49cc;
+}
+
+.black-text {
+    color: black;
+}
+
+.purple-button {
+    background-color: #9c49cc;
+    color: white;
+    height: 75;
+    margin-top: 15;
+    margin-bottom: 15;
+}
+
+.text-button {
+    background-color: white;
+    color: #9c49cc;
+    height: 75;
+    margin-top: 15;
+    margin-bottom: 15;
+}
+
+.center-align {
+    text-align: center;
 }

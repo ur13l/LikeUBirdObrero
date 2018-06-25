@@ -1,0 +1,25 @@
+
+<StackLayout orientation="vertical">
+  <StackLayout class="background-blue" orientation="vertical" height="30%" [style.background]="'url(&quot;~/assets/img/plomeria.png&quot;)'">
+    <StackLayout class="black-mask">       
+      <StackLayout orientation="horizontal" height="50%">
+        <StackLayout width="15%">     </StackLayout>
+        <Image height="25" width="70%" src="~/assets/img/logoicon.png"></Image>
+      </StackLayout>
+      <StackLayout orientation="horizontal" height="50%">
+        <Label class="medium-text white-text" verticalAlignment="center" horizontalAlignment="center" width="100%" style="text-align: center;" text="Buscar trabajo"></Label>
+      </StackLayout>
+    </StackLayout>
+  </StackLayout>
+  <ScrollView height="70%">
+    <StackLayout class="form" orientation="vertical">
+      <Label class="center-align" textWrap="true" text="Bienvenido, Uriel. Ahora puedes disfrutar de LUB Mercado Vivo, Solución rápida para encontrar trabajo a través del Mapa Interactivo" textAlign="center"></Label>
+      <FlexboxLayout>
+        <Label class="h3 m-15" textWrap="true" width="75%" text="Mantenerme conectado"></Label>
+        <Switch class="switch" checked="false" width="25%"> </Switch>
+      </FlexboxLayout>
+      <Button class="purple-button" text="Comenzar" [nsRouterLink]="['/home']"></Button>
+      <Button class="text-button" text="Sign Up" [nsRouterLink]="['/certification-lub']"></Button>
+    </StackLayout>
+  </ScrollView>
+</StackLayout>
