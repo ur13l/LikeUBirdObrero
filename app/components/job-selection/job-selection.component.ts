@@ -32,6 +32,10 @@ export class JobSelectionComponent implements OnInit {
 		{
 			name: "Reparación de PC",
 			image: "~/assets/img/pc.png"
+		},
+		{
+			name: "Home Appliances",
+			image: "~/assets/img/washing-machine.png"
 		}
 	]
 	constructor(

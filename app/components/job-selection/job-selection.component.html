@@ -12,19 +12,15 @@
         </StackLayout>
       </StackLayout>
     </StackLayout>
-    <StackLayout height="70%">
-      <StackLayout class="background-white item" *ngFor="let job of jobs" [nsRouterLink]="['/certification-lub']" height="60" orientation="horizontal">
-        <StackLayout width="20%" verticalAlignment="center">
-          <Image [src]="job.image" stretch="aspectFill" height="30" width="30"></Image>
+    <GridLayout height="70%" columns="*,*" rows="auto,auto,auto">
+      <StackLayout class="background-white item" *ngFor="let job of jobs; index as i" padding="5" margin="5" verticalAlignment="center" horizontalAlignment="center" [row]="i/2" [col]="i%2" [nsRouterLink]="['/certification-lub']" height="120" orientation="vertical">
+        <StackLayout width="100%" verticalAlignment="center">
+          <Image [src]="job.image" stretch="aspectFill" height="60" width="60"></Image>
         </StackLayout>
-        <StackLayout orientation="vertical" width="50%" marginLeft="4%" verticalAlignment="center">
+        <StackLayout orientation="vertical" marginLeft="4%" verticalAlignment="center" marginTop="10" horizontalAlignment="center">
           <Label [text]="job.name"></Label>
         </StackLayout>
-        <StackLayout width="30%" verticalAlignment="center">
-          <Image src="~/assets/img/ubird.png" stretch="aspectFill" height="30" width="30"></Image>
-        </StackLayout>
-        <StackLayout class="line-purple"></StackLayout>
       </StackLayout>
-    </StackLayout>
+    </GridLayout>
   </StackLayout>
 </ScrollView>
