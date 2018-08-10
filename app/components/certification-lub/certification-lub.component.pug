@@ -1,17 +1,17 @@
 StackLayout(orientation="vertical")
-    StackLayout.background-blue(orientation="vertical", height="30%", [style.background]="'url(\"~/assets/img/plomeria.png\")'")
+    StackLayout.background-blue(orientation="vertical", height="20%", [style.background]="'url(\"' + imagen + '\")'")
         StackLayout.black-mask        
             StackLayout(orientation="horizontal", height="50%")
                 StackLayout(width="15%")      
                 Image(height="25" width="70%" src="~/assets/img/logoicon.png")
             StackLayout(orientation="horizontal", height="50%")
                 Label.medium-text.white-text(verticalAlignment="center", horizontalAlignment="center", width="100%", style="text-align: center;", text="Reclutamiento y certificación de LUB")
-    ScrollView(height="70%")
-        StackLayout.form(marginTop="15", height="100%")
+    ScrollView()
+        StackLayout.form(marginTop="15")
             Label.input-label.black-text(text="Nombre")
             TextField.full-width(
                 class="input input-border",
-                height=40,
+                height=30,
                 paddingBottom="5",
                 paddingTop="5",
                 required
@@ -21,7 +21,7 @@ StackLayout(orientation="vertical")
             Label.input-label.black-text(text="Apellido")
             TextField.full-width(
                 class="input input-border",
-                height=40,
+                height=30,
                 paddingBottom="5",
                 paddingTop="5",
                 required
@@ -30,7 +30,7 @@ StackLayout(orientation="vertical")
             Label.input-label.black-text(text="INE o RFC")
             TextField.full-width(
                 class="input input-border",
-                height=40,
+                height=30,
                 paddingBottom="5",
                 paddingTop="5",
                 required
@@ -39,7 +39,7 @@ StackLayout(orientation="vertical")
             Label.input-label.black-text(text="Email")
             TextField.full-width(
                 class="input input-border",
-                height=40,
+                height=30,
                 paddingBottom="5",
                 paddingTop="5",
                 required
@@ -48,11 +48,24 @@ StackLayout(orientation="vertical")
             Label.input-label.black-text(text="Celular")
             TextField.full-width(
                 class="input input-border",
-                height=40,
+                height=30,
                 paddingBottom="5",
                 paddingTop="5",
                 required
                 )  
+
+            Label.input-label.black-text(text="Nivel de cerrajería", *ngIf="type=='4'")
+            DropDown.dropdown-style(
+                *ngIf="type=='4'"
+                height=30,
+                [items]="niveles",
+                [(ngModel)]="nivelSeleccionado",
+                row="0",
+                col="0")
+
+            FlexboxLayout
+                Label.h3.m-15(textWrap="true" width="75%" text="He leído y acepto los términos y condiciones")
+                Switch.switch(checked="false", width="25%")                    
             
-            Button.purple-button(text="Registrar", [nsRouterLink]="['/welcome-worker']")
+            Button.purple-button(text="Registrar", [nsRouterLink]="['/certification-lub-documents']")
             

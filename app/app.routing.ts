@@ -31,6 +31,9 @@ import { ServiceConfirmedComponent } from "~/components/service-confirmed/servic
 import { JobSelectionComponent } from "~/components/job-selection/job-selection.component";
 import { CertificationLubComponent } from "~/components/certification-lub/certification-lub.component";
 import { WelcomeWorkerComponent } from "~/components/welcome-worker/welcome-worker.component";
+import { CertificationLubDocumentsComponent } from "~/components/certification-lub-documents/certification-lub-documents.component";
+import { LubCertificationSummaryComponent } from "~/components/lub-certification-summary/lub-certification-summary.component";
+import { DashboardComponent } from "~/components/dashboard/dashboard.component";
 
 export const routes: Routes = [
     { path: "", component:AppComponent, children: [
@@ -45,8 +48,11 @@ export const routes: Routes = [
         {path:"confirm-service", pathMatch:'full', component:ConfirmServiceComponent, canActivate:[AuthGuard]},
         {path:"service-confirmed", pathMatch:'full', component:ServiceConfirmedComponent, canActivate:[AuthGuard]},
         {path:"job-select", pathMatch:'full', component:JobSelectionComponent},
-        {path:"certification-lub", pathMatch:'full', component:CertificationLubComponent},
+        {path:"certification-lub/:type", pathMatch:'full', component:CertificationLubComponent},
         {path:"welcome-worker", pathMatch:'full', component:WelcomeWorkerComponent},
+        {path:"certification-lub-documents", pathMatch:'full', component:CertificationLubDocumentsComponent},
+        {path:"lub-certification-summary", pathMatch:'full', component:LubCertificationSummaryComponent},
+        {path:"dashboard", pathMatch:'full', component:DashboardComponent},
         
         {
             path:"", component:DrawerComponent, children:[

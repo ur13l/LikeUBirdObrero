@@ -1,0 +1,39 @@
+
+<StackLayout orientation="vertical">
+  <StackLayout class="background-blue" orientation="vertical" height="20%" [style.background]="'url(&quot;' + imagen + '&quot;)'">
+    <StackLayout class="black-mask">       
+      <StackLayout orientation="horizontal" height="50%">
+        <StackLayout width="15%">     </StackLayout>
+        <Image height="25" width="70%" src="~/assets/img/logoicon.png"></Image>
+      </StackLayout>
+      <StackLayout orientation="horizontal" height="50%">
+        <Label class="medium-text white-text" verticalAlignment="center" horizontalAlignment="center" width="100%" style="text-align: center;" text="Reclutamiento y certificación de LUB"></Label>
+      </StackLayout>
+    </StackLayout>
+  </StackLayout>
+  <ScrollView>
+    <StackLayout class="form" marginTop="15">
+      <GridLayout height="70%" columns="*,*" rows="auto,auto,auto">
+        <StackLayout class="background-white item" *ngFor="let job of jobs; index as i" [class.selected]="job.selected" padding="5" margin="5" verticalAlignment="center" horizontalAlignment="center" [row]="i/2" [col]="i%2" (tap)="onSelectSingleTap()" height="120" orientation="vertical">
+          <StackLayout width="100%" verticalAlignment="center">
+            <Image [src]="job.image" stretch="aspectFill" height="40" width="40"></Image>
+          </StackLayout>
+          <StackLayout orientation="vertical" marginLeft="4%" verticalAlignment="center" marginTop="10" horizontalAlignment="center">
+            <Label class="light" [text]="job.name" textWrap="true" textAlign="center" horizontalAlignment="center"></Label>
+          </StackLayout>
+        </StackLayout>
+      </GridLayout>
+      <Label class="input-label black-text" text="Direccion"></Label>
+      <TextField class="full-width input input-border" height="30" paddingBottom="5" paddingTop="5" required="required"> </TextField>
+      <Label class="input-label black-text" text="Selecciona una opción"></Label>
+      <GridLayout columns="*,*" rows="auto,auto,auto">
+        <StackLayout class="background-white item" *ngFor="let dob of dobs; index as i" [class.selected]="dob.selected" padding="5" margin="5" verticalAlignment="center" horizontalAlignment="center" [row]="i/2" [col]="i%2" (tap)="select(dob)" height="120" orientation="vertical">
+          <StackLayout orientation="vertical" marginLeft="4%" verticalAlignment="center" marginTop="10" horizontalAlignment="center">
+            <Label class="light" [text]="dob.name" textWrap="true" textAlign="center" horizontalAlignment="center"></Label>
+          </StackLayout>
+        </StackLayout>
+      </GridLayout>
+      <Button class="purple-button" text="Registrar" [nsRouterLink]="['/lub-certification-summary']"></Button>
+    </StackLayout>
+  </ScrollView>
+</StackLayout>

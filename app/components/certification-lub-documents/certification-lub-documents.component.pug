@@ -1,0 +1,33 @@
+StackLayout(orientation="vertical")
+    StackLayout.background-blue(orientation="vertical", height="20%", [style.background]="'url(\"' + imagen + '\")'")
+        StackLayout.black-mask        
+            StackLayout(orientation="horizontal", height="50%")
+                StackLayout(width="15%")      
+                Image(height="25" width="70%" src="~/assets/img/logoicon.png")
+            StackLayout(orientation="horizontal", height="50%")
+                Label.medium-text.white-text(verticalAlignment="center", horizontalAlignment="center", width="100%", style="text-align: center;", text="Reclutamiento y certificación de LUB")
+    ScrollView()
+        StackLayout.form(marginTop="15")
+            GridLayout(height="70%", columns="*,*", rows="auto,auto,auto")
+                StackLayout.background-white.item(*ngFor="let job of jobs; index as i", [class.selected]="job.selected", padding="5", margin="5", verticalAlignment="center", horizontalAlignment="center", [row]="i/2", [col]="i%2", (tap)="onSelectSingleTap()", height="120", orientation="vertical")
+                    StackLayout(width="100%", verticalAlignment="center")
+                        Image([src]="job.image", stretch="aspectFill", height="40", width="40")
+                    StackLayout(orientation="vertical", marginLeft="4%", verticalAlignment="center", marginTop="10", horizontalAlignment="center")
+                        Label.light([text]="job.name", textWrap="true", textAlign="center", horizontalAlignment="center")
+            Label.input-label.black-text(text="Direccion")
+            TextField.full-width(
+                class="input input-border",
+                height=30,
+                paddingBottom="5",
+                paddingTop="5",
+                required
+                )  
+            Label.input-label.black-text(text="Selecciona una opción")
+            GridLayout(columns="*,*", rows="auto,auto,auto")
+                StackLayout.background-white.item(*ngFor="let dob of dobs; index as i", [class.selected]="dob.selected", padding="5", margin="5", verticalAlignment="center", horizontalAlignment="center", [row]="i/2", [col]="i%2", (tap)="select(dob)", height="120", orientation="vertical")
+                    StackLayout(orientation="vertical", marginLeft="4%", verticalAlignment="center", marginTop="10", horizontalAlignment="center")
+                        Label.light([text]="dob.name", textWrap="true", textAlign="center", horizontalAlignment="center")
+            
+
+            
+            Button.purple-button(text="Registrar", [nsRouterLink]="['/lub-certification-summary']")

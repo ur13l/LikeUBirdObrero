@@ -1,0 +1,93 @@
+ScrollView
+    StackLayout
+        StackLayout.purplebackground.top-line( padding="10")
+            Label.white-text.title.bold(text="Dashboard", width="100%", textAlignment="center")
+            Image(src="~/assets/img/logoicon.png", width="70", horizontalAlignment="center")
+            Label.white-text.light(text="Bienvenido al dashboard de LikeUBird, tú tienes el control aquí.", width="100%", textAlignment="center")
+        StackLayout.black-background(padding="10", orientation="horizontal")
+            Image(src="~/assets/img/user1.png", width="80", margin="15")
+            StackLayout
+                Label.title.white-text.bold(text="Nueva solicitud de Humberto Ramos", textWrap="true")
+                Label.light.white-text(text="Servicio de duplicado de llaves")
+                Label.purple-text.subtitle(text="Atender")
+
+        StackLayout.top-line( padding="10")
+            Label.purple-text.title(text="Actividad", width="100%", textAlignment="center")
+            Image(src="~/assets/img/dashboard3.png", width="100%")
+            StackLayout(width="100%", orientation="horizontal")
+                StackLayout(width="50%", orientation="horizontal", horizontalAlignment="center", textAlignment="center")
+                    Label.grey-text(text="+$1,150", verticalAlignment="center")
+                    Image(src="~/assets/img/up.png", width="20", margin="10")
+                StackLayout(width="50%", orientation="horizontal", horizontalAlignment="center", textAlignment="center")
+                    Label.grey-text(text="-$220", verticalAlignment="center")
+                    Image(src="~/assets/img/down.png", width="20", margin="10")
+            Button.purple-button(text="Ver pedidos", [nsRouterLink]="['/home']")
+        
+        StackLayout.top-line( padding="10")
+            Label.purple-text.title(text="Perfil", width="100%", textAlignment="center")
+            Image(src="~/assets/img/dashboard1.png", width="100%")
+            Label.purple-text.light(text="80% Perfil completado", width="100%", textAlignment="center")
+            Button.purple-button(text="Editar perfil", [nsRouterLink]="['/lub-certification-summary']")
+            
+        StackLayout(col="0", row="1", padding="10")
+            Label.purple-text.title(text="Disponibilidad", width="100%", textAlignment="center")  
+            FlexboxLayout
+                Label.h3.m-15.purple-text.bold(textWrap="true" width="75%" text="Disponible")
+                Switch.switch(checked="false", width="25%")          
+            FlexboxLayout
+                Label.h3.m-15.light(textWrap="true" width="75%" text="Sincronización con la nube")
+                Switch.switch(checked="false", width="25%")                    
+            FlexboxLayout
+                Label.h3.m-15.light(textWrap="true" width="75%" text="Notificaciones Push")
+                Switch.switch(checked="false", width="25%")                    
+            
+        //
+            StackLayout(col="0", row="2", padding="10")
+                Label.purple-text.title(text="Actividad", width="100%", textAlignment="center")  
+            StackLayout(col="1", row="0", padding="10")
+                Label.purple-text.title(text="Actividad", width="100%", textAlignment="center")  
+            StackLayout(col="1", row="1", padding="10")
+                Label.purple-text.title(text="Actividad", width="100%", textAlignment="center")  
+            StackLayout(col="1", row="2", padding="10")
+                Label.purple-text.title(text="Actividad", width="100%", textAlignment="center")  
+            StackLayout(col="2", row="0", padding="10")
+                Label.purple-text.title(text="Actividad", width="100%", textAlignment="center")  
+            StackLayout(col="2", row="1", padding="10")
+                Label.purple-text.title(text="Actividad", width="100%", textAlignment="center")  
+            StackLayout(col="2", row="2", padding="10")
+                Label.purple-text.title(text="Actividad", width="100%", textAlignment="center")  
+
+
+//StackLayout(orientation="vertical")
+    StackLayout.background-blue(orientation="vertical", height="20%", [style.background]="'url(\"' + imagen + '\")'")
+        StackLayout.black-mask        
+            StackLayout(orientation="horizontal", height="50%")
+                StackLayout(width="15%")      
+                Image(height="25" width="70%" src="~/assets/img/logoicon.png")
+            StackLayout(orientation="horizontal", height="50%")
+                Label.medium-text.white-text(verticalAlignment="center", horizontalAlignment="center", width="100%", style="text-align: center;", text="Reclutamiento y certificación de LUB")
+    ScrollView()
+        StackLayout.form(marginTop="15")
+            GridLayout(height="70%", columns="*,*", rows="auto,auto,auto")
+                StackLayout.background-white.item(*ngFor="let job of jobs; index as i", [class.selected]="job.selected", padding="5", margin="5", verticalAlignment="center", horizontalAlignment="center", [row]="i/2", [col]="i%2", (tap)="onSelectSingleTap()", height="120", orientation="vertical")
+                    StackLayout(width="100%", verticalAlignment="center")
+                        Image([src]="job.image", stretch="aspectFill", height="40", width="40")
+                    StackLayout(orientation="vertical", marginLeft="4%", verticalAlignment="center", marginTop="10", horizontalAlignment="center")
+                        Label.light([text]="job.name", textWrap="true", textAlign="center", horizontalAlignment="center")
+            Label.input-label.black-text(text="Direccion")
+            TextField.full-width(
+                class="input input-border",
+                height=30,
+                paddingBottom="5",
+                paddingTop="5",
+                required
+                )  
+            Label.input-label.black-text(text="Selecciona una opción")
+            GridLayout(columns="*,*", rows="auto,auto,auto")
+                StackLayout.background-white.item(*ngFor="let dob of dobs; index as i", [class.selected]="dob.selected", padding="5", margin="5", verticalAlignment="center", horizontalAlignment="center", [row]="i/2", [col]="i%2", (tap)="select(dob)", height="120", orientation="vertical")
+                    StackLayout(orientation="vertical", marginLeft="4%", verticalAlignment="center", marginTop="10", horizontalAlignment="center")
+                        Label.light([text]="dob.name", textWrap="true", textAlign="center", horizontalAlignment="center")
+            
+
+            
+            Button.purple-button(text="Registrar", [nsRouterLink]="['/lub-certification-summary']")

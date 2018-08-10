@@ -1,6 +1,6 @@
 
 <StackLayout orientation="vertical">
-  <StackLayout class="background-blue" orientation="vertical" height="30%" [style.background]="'url(&quot;~/assets/img/plomeria.png&quot;)'">
+  <StackLayout class="background-blue" orientation="vertical" height="20%" [style.background]="'url(&quot;'+imagen+'&quot;)'">
     <StackLayout class="black-mask">       
       <StackLayout orientation="horizontal" height="50%">
         <StackLayout width="15%">     </StackLayout>
@@ -18,8 +18,9 @@
         <Label class="h3 m-15" textWrap="true" width="75%" text="Mantenerme conectado"></Label>
         <Switch class="switch" checked="false" width="25%"> </Switch>
       </FlexboxLayout>
+      <Label class="center-align purple-text" textWrap="true" text="¿Quieres Coach LUB?"></Label>
       <Button class="purple-button" text="Comenzar" [nsRouterLink]="['/home']"></Button>
-      <Button class="text-button" text="Sign Up" [nsRouterLink]="['/certification-lub']"></Button>
+      <Button class="text-button" text="Sign Up" [nsRouterLink]="['/certification-lub/1']"></Button>
     </StackLayout>
   </ScrollView>
 </StackLayout>

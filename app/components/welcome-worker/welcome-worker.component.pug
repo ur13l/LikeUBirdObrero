@@ -1,5 +1,5 @@
 StackLayout(orientation="vertical")
-    StackLayout.background-blue(orientation="vertical", height="30%", [style.background]="'url(\"~/assets/img/plomeria.png\")'")
+    StackLayout.background-blue(orientation="vertical", height="20%", [style.background]="'url(\"'+imagen+'\")'")
         StackLayout.black-mask        
             StackLayout(orientation="horizontal", height="50%")
                 StackLayout(width="15%")      
@@ -12,6 +12,9 @@ StackLayout(orientation="vertical")
             FlexboxLayout
                 Label.h3.m-15(textWrap="true" width="75%" text="Mantenerme conectado")
                 Switch.switch(checked="false", width="25%")  
+
+            Label.center-align.purple-text(textWrap="true", text="¿Quieres Coach LUB?")
+            
             Button.purple-button(text="Comenzar", [nsRouterLink]="['/home']")
-            Button.text-button(text="Sign Up", [nsRouterLink]="['/certification-lub']")
+            Button.text-button(text="Sign Up", [nsRouterLink]="['/certification-lub/1']")
             

@@ -1,51 +1,82 @@
-
-<StackLayout height="100%">
-  <StackLayout class="secondary-bar" orientation="horizontal" verticalAlignment="center" (tap)="marketPlace()">
-    <StackLayout width="85%" orientation="horizontal">
-      <Image height="25" width="10%" src="~/assets/img/fast-delivery.png"></Image>
-      <Label class="white-text" verticalAlignment="center" text="Market Place"></Label>
+<!DOCTYPE html>
+<ScrollView>
+  <StackLayout>
+    <StackLayout class="purplebackground top-line" padding="10">
+      <Label class="white-text title bold" text="Resumen de citas" width="100%" textAlignment="center"></Label>
     </StackLayout>
-    <StackLayout width="150%" horizontalAlignment="right" verticalAlignment="center">
-      <Label text="Offline" (tap)="toggleOffline()" *ngIf="!offline"></Label>
-      <Label text="Online" (tap)="toggleOffline()" *ngIf="offline"></Label>
+    <StackLayout>
+      <RadCalendar id="calendar" height="300"></RadCalendar>
     </StackLayout>
-  </StackLayout>
-  <StackLayout *ngIf="!offline">
-    <StackLayout *ngFor="let service of services">
-      <StackLayout class="menu-item background-blue" *ngIf="service.confirmed" height="130" orientation="horizontal" (tap)="confirmService(service)">
-        <StackLayout verticalAlignment="center" width="30%">
-          <Image class="img-rounded" [src]="service.image" width="60" height="60" stretch="aspectFill"></Image>
-        </StackLayout>
-        <StackLayout width="40%" verticalAlignment="center">
-          <Label class="white-text" [text]="service.name"></Label>
-          <Label class="secondary-text" [text]="'$' + service.price"></Label>
-        </StackLayout>
-        <StackLayout width="40%" verticalAlignment="center">
-          <Label class="white-text" text="Hace {{service.time}} minutos."></Label>
-          <Label class="secondary-text" text="{{service.distance}} km"></Label>
-        </StackLayout>
-      </StackLayout>
+    <StackLayout class="purplebackground top-line" padding="10">
+      <Label class="white-text title bold" text="Servicios solicitados" width="100%" textAlignment="center"></Label>
     </StackLayout>
-    <StackLayout *ngFor="let service of services">
-      <StackLayout class="menu-item background-blue" *ngIf="!service.confirmed" height="130" orientation="horizontal">
-        <StackLayout verticalAlignment="center" width="30%">
-          <Image class="img-rounded" [src]="service.image" width="60" height="60" stretch="aspectFill"></Image>
-        </StackLayout>
-        <StackLayout width="40%" verticalAlignment="center">
-          <Label class="white-text" [text]="service.name"></Label>
-          <Label class="secondary-text" [text]="'$' + service.price"></Label>
-          <StackLayout class="button-stack" verticalAlignment="center" (tap)="confirmService(service)">
-            <Label text="Confirmar Servicio"></Label>
+    <StackLayout>
+      <StackLayout *ngFor="let service of services">
+        <StackLayout class="menu-item" *ngIf="service.confirmed" height="130" orientation="horizontal" (tap)="confirmService(service)">
+          <StackLayout verticalAlignment="center" width="30%">
+            <Image class="img-rounded" [src]="service.image" width="60" height="60" stretch="aspectFill"></Image>
+          </StackLayout>
+          <StackLayout width="40%" verticalAlignment="center">
+            <Label class="white-text" [text]="service.name"></Label>
+            <Label class="secondary-text" [text]="'$' + service.price"></Label>
+          </StackLayout>
+          <StackLayout width="40%" verticalAlignment="center">
+            <Label class="white-text" text="Hace {{service.time}} minutos."></Label>
+            <Label class="secondary-text" text="{{service.distance}} km"></Label>
           </StackLayout>
         </StackLayout>
-        <StackLayout width="40%" verticalAlignment="center">
-          <Label class="white-text" text="Hace {{service.time}} minutos."></Label>
-          <Label class="secondary-text" text="{{service.distance}} km"></Label>
+      </StackLayout>
+      <StackLayout *ngFor="let service of services">
+        <StackLayout class="menu-item" *ngIf="!service.confirmed" height="100" orientation="horizontal">
+          <StackLayout verticalAlignment="center" width="30%">
+            <Image class="img-rounded" [src]="service.image" width="60" height="60" stretch="aspectFill"></Image>
+          </StackLayout>
+          <StackLayout class="top-line" width="40%" verticalAlignment="center">
+            <Label class="grey-text subtitle" [text]="service.name" horizontalAlignment="left"></Label>
+            <Label class="grey-text" [text]="'$' + service.price" horizontalAlignment="left"></Label>
+            <Label class="purple-text subtitle" verticalAlignment="center" text="Confirmar servicio" horizontalAlignment="left" (tap)="confirmService(service)"></Label>
+          </StackLayout>
+          <StackLayout width="40%" verticalAlignment="center">
+            <Label class="purple-text" text="Hace {{service.time}} minutos."></Label>
+            <Label class="grey-text" text="{{service.distance}} km"></Label>
+          </StackLayout>
         </StackLayout>
       </StackLayout>
     </StackLayout>
   </StackLayout>
-  <StackLayout class="background-blue" height="100%" marginTop="1" verticalAlignment="center" *ngIf="offline">
-    <Label text="Mientras estés en modo offline no podrás ver las solicitudes realizadas." textWrap="true"></Label>
-  </StackLayout>
-</StackLayout>
+</ScrollView>
+<!--ScrollView
+StackLayout
+    StackLayout.secondary-bar(orientation="horizontal", verticalAlignment="center", (tap)="marketPlace()")
+        StackLayout(width="85%", orientation="horizontal")
+            Image(height="25" width="10%" src="~/assets/img/fast-delivery.png")
+            Label.white-text(verticalAlignment="center", text="Market Place")
+        StackLayout(width="150%", horizontalAlignment="right", verticalAlignment="center")
+            Label(text="Offline", (tap)="toggleOffline()", *ngIf="!offline")
+            Label(text="Online", (tap)="toggleOffline()", *ngIf="offline")
+    StackLayout(*ngIf="!offline")           
+        RadCalendar
+        StackLayout(*ngFor="let service of services")
+            StackLayout.menu-item(*ngIf="service.confirmed", height="130", orientation="horizontal",  (tap)="confirmService(service)")
+                StackLayout(verticalAlignment="center", width="30%")
+                    Image.img-rounded([src]="service.image", width="60", height="60", stretch="aspectFill")
+                StackLayout(width="40%", verticalAlignment="center")
+                    Label.white-text([text]="service.name")
+                    Label.secondary-text([text]="'$' + service.price")
+                StackLayout(width="40%", verticalAlignment="center")
+                    Label.white-text(text="Hace {{service.time}} minutos.")
+                    Label.secondary-text(text="{{service.distance}} km")
+        StackLayout(*ngFor="let service of services")
+            StackLayout.menu-item(*ngIf="!service.confirmed", height="130", orientation="horizontal")
+                StackLayout(verticalAlignment="center", width="30%")
+                    Image.img-rounded([src]="service.image", width="60", height="60", stretch="aspectFill")
+                StackLayout.top-line(width="40%", verticalAlignment="center")
+                    Label.purple-text.title([text]="service.name")
+                    Label.grey-text([text]="'$' + service.price")
+                    Label.purple-text.subtitle(verticalAlignment="center", text="Confirmar servicio", (tap)="confirmService(service)")
+                StackLayout(width="40%", verticalAlignment="center")
+                    Label.purple-text(text="Hace {{service.time}} minutos.")
+                    Label.grey-text(text="{{service.distance}} km")
+    StackLayout.background-blue(height="100%", marginTop="1", verticalAlignment="center", *ngIf="offline")
+        Label(text="Mientras estés en modo offline no podrás ver las solicitudes realizadas.", textWrap="true")
+-->

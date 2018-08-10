@@ -7,8 +7,11 @@ StackLayout.page
             Image(height="30%", (tap)="setFilter('worker')", src="~/assets/img/profile.png")
         StackLayout(width="15%", verticalAlignment="center", horizontalAlignment="center", height="100%", [class.selected]="filter == 'shop'")
             Image(height="30%", (tap)="setFilter('shop')", src="~/assets/img/shop.png")
-    StackLayout
-        WorkerItem(*ngFor="let worker of workers", [worker]="worker", [filter]="filter")
+    ScrollView 
+        StackLayout
+            RadCalendar(height="50%", id="calendar")
+            StackLayout
+                WorkerItem(*ngFor="let worker of workers", [worker]="worker", [filter]="filter")
     StackLayout.background-blue(height="100%")   
     
     

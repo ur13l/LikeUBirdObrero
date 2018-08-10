@@ -22,7 +22,7 @@ export class RedirectAuthGuard implements CanActivate {
 
     this.user = JSON.parse(localStorage.getItem('currentUser'));
         if (this.user) {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/dashboard']);
       }
 
       // not logged in so redirect to login page with the return url

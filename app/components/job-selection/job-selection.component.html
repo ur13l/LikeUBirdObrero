@@ -13,7 +13,7 @@
       </StackLayout>
     </StackLayout>
     <GridLayout height="70%" columns="*,*" rows="auto,auto,auto">
-      <StackLayout class="background-white item" *ngFor="let job of jobs; index as i" padding="5" margin="5" verticalAlignment="center" horizontalAlignment="center" [row]="i/2" [col]="i%2" [nsRouterLink]="['/certification-lub']" height="120" orientation="vertical">
+      <StackLayout class="background-white item" *ngFor="let job of jobs; index as i" padding="5" margin="5" verticalAlignment="center" horizontalAlignment="center" [row]="i/2" [col]="i%2" [nsRouterLink]="['/certification-lub/' + job.id]" height="120" orientation="vertical">
         <StackLayout width="100%" verticalAlignment="center">
           <Image [src]="job.image" stretch="aspectFill" height="60" width="60"></Image>
         </StackLayout>

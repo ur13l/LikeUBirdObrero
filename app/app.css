@@ -231,11 +231,14 @@ refer to http://docs.nativescript.org/ui/theme.
 }
 
 .dropdown-style {
-    padding: 15;
+    padding: 0;
 }
 
 .dropdown-style::option {
-    background-color: #080f19;
+    background-color: white;
+    color: #9F54C9;
+    font-weight: 100;
+    padding: 10;
   }
 
 .bold {
@@ -289,9 +292,9 @@ refer to http://docs.nativescript.org/ui/theme.
 .purple-button {
     background-color: #9c49cc;
     color: white;
-    height: 75;
-    margin-top: 15;
-    margin-bottom: 15;
+    height: 59;
+    margin-top: 10;
+    margin-bottom: 10;
 }
 
 .text-button {
@@ -304,4 +307,40 @@ refer to http://docs.nativescript.org/ui/theme.
 
 .center-align {
     text-align: center;
+}
+
+.title {
+    font-size: 20;
+}
+
+.subtitle {
+    font-size: 16;
+}
+
+.light {
+    font-weight: 100;
+}
+
+.regular {
+    font-weight: 400;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.purple-background {
+    background: rgb(148, 145, 150);
+}
+
+.purplebackground {
+    background: #9F54C9;
+}
+
+.black-background {
+    background: black;
+}
+
+.grey-text {
+    color: #6e6e6e;
 }

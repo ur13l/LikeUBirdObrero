@@ -1,6 +1,6 @@
 
 <StackLayout orientation="vertical">
-  <StackLayout class="background-blue" orientation="vertical" height="30%" [style.background]="'url(&quot;~/assets/img/plomeria.png&quot;)'">
+  <StackLayout class="background-blue" orientation="vertical" height="20%" [style.background]="'url(&quot;' + imagen + '&quot;)'">
     <StackLayout class="black-mask">       
       <StackLayout orientation="horizontal" height="50%">
         <StackLayout width="15%">     </StackLayout>
@@ -11,20 +11,26 @@
       </StackLayout>
     </StackLayout>
   </StackLayout>
-  <ScrollView height="70%">
-    <StackLayout class="form" marginTop="15" height="100%">
+  <ScrollView>
+    <StackLayout class="form" marginTop="15">
       <Label class="input-label black-text" text="Nombre"></Label>
-      <TextField class="full-width input input-border" height="40" paddingBottom="5" paddingTop="5" required="required"></TextField>
+      <TextField class="full-width input input-border" height="30" paddingBottom="5" paddingTop="5" required="required"></TextField>
       <Label class="input-error" text="Campo requerido" *ngIf="submitted &amp;&amp; nameField.errors?.required"></Label>
       <Label class="input-label black-text" text="Apellido"></Label>
-      <TextField class="full-width input input-border" height="40" paddingBottom="5" paddingTop="5" required="required"></TextField>
+      <TextField class="full-width input input-border" height="30" paddingBottom="5" paddingTop="5" required="required"></TextField>
       <Label class="input-label black-text" text="INE o RFC"></Label>
-      <TextField class="full-width input input-border" height="40" paddingBottom="5" paddingTop="5" required="required"></TextField>
+      <TextField class="full-width input input-border" height="30" paddingBottom="5" paddingTop="5" required="required"></TextField>
       <Label class="input-label black-text" text="Email"></Label>
-      <TextField class="full-width input input-border" height="40" paddingBottom="5" paddingTop="5" required="required"></TextField>
+      <TextField class="full-width input input-border" height="30" paddingBottom="5" paddingTop="5" required="required"></TextField>
       <Label class="input-label black-text" text="Celular"></Label>
-      <TextField class="full-width input input-border" height="40" paddingBottom="5" paddingTop="5" required="required"> </TextField>
-      <Button class="purple-button" text="Registrar" [nsRouterLink]="['/welcome-worker']"></Button>
+      <TextField class="full-width input input-border" height="30" paddingBottom="5" paddingTop="5" required="required"> </TextField>
+      <Label class="input-label black-text" text="Nivel de cerrajería" *ngIf="type=='4'"></Label>
+      <DropDown class="dropdown-style" *ngIf="type=='4'" height="30" [items]="niveles" [(ngModel)]="nivelSeleccionado" row="0" col="0"></DropDown>
+      <FlexboxLayout>
+        <Label class="h3 m-15" textWrap="true" width="75%" text="He leído y acepto los términos y condiciones"></Label>
+        <Switch class="switch" checked="false" width="25%">                   </Switch>
+      </FlexboxLayout>
+      <Button class="purple-button" text="Registrar" [nsRouterLink]="['/certification-lub-documents']"></Button>
     </StackLayout>
   </ScrollView>
 </StackLayout>

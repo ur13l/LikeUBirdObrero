@@ -47,6 +47,10 @@ import { ServiceConfirmedComponent } from "~/components/service-confirmed/servic
 import { JobSelectionComponent } from "~/components/job-selection/job-selection.component";
 import { CertificationLubComponent } from "~/components/certification-lub/certification-lub.component";
 import { WelcomeWorkerComponent } from "~/components/welcome-worker/welcome-worker.component";
+import { CertificationLubDocumentsComponent } from "~/components/certification-lub-documents/certification-lub-documents.component";
+import { LubCertificationSummaryComponent } from "~/components/lub-certification-summary/lub-certification-summary.component";
+import { NativeScriptUICalendarModule } from "nativescript-ui-calendar/angular";
+import { DashboardComponent } from "~/components/dashboard/dashboard.component";
 
 declare var GMSServices: any;
 
@@ -71,7 +75,8 @@ if (platform.isIOS) {
         NativeScriptRouterModule.forRoot(routes),
         DropDownModule,
         CustomFormsModule,
-        NativeScriptUISideDrawerModule
+        NativeScriptUISideDrawerModule,
+        NativeScriptUICalendarModule
     ],
     declarations: [
         AppComponent,
@@ -102,7 +107,10 @@ if (platform.isIOS) {
         ServiceConfirmedComponent,
         JobSelectionComponent,
         CertificationLubComponent,
-        WelcomeWorkerComponent
+        WelcomeWorkerComponent,
+        CertificationLubDocumentsComponent,
+        LubCertificationSummaryComponent,
+        DashboardComponent
     ],
     providers: [
         AuthService,

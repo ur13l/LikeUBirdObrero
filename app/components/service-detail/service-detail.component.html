@@ -11,8 +11,13 @@
       <Image height="30%" (tap)="setFilter('shop')" src="~/assets/img/shop.png"></Image>
     </StackLayout>
   </StackLayout>
-  <StackLayout>
-    <WorkerItem *ngFor="let worker of workers" [worker]="worker" [filter]="filter"></WorkerItem>
-  </StackLayout>
+  <ScrollView> 
+    <StackLayout>
+      <RadCalendar height="50%" id="calendar"></RadCalendar>
+      <StackLayout>
+        <WorkerItem *ngFor="let worker of workers" [worker]="worker" [filter]="filter"></WorkerItem>
+      </StackLayout>
+    </StackLayout>
+  </ScrollView>
   <StackLayout class="background-blue" height="100%">  </StackLayout>
 </StackLayout>

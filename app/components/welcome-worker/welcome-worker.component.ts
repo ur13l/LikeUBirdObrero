@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 
 export class WelcomeWorkerComponent implements OnInit {
-
+	public imagen : string = "~/assets/img/plomeria.jpg";
 	constructor(
 		private _page: Page,
 		private authService : AuthService,
@@ -20,5 +20,7 @@ export class WelcomeWorkerComponent implements OnInit {
         this._page.actionBarHidden = true;
 		
 	}
-	ngOnInit() { }
+	ngOnInit() { 
+		this.imagen = localStorage.getItem('imagen');		
+	}
 }
